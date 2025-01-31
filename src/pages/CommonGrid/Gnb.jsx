@@ -57,7 +57,7 @@ function Gnb() {
             onClick={() => handleQuickMenuClick(2)}
           >
             <IoTicket />
-            탑승 <span>boarding pass</span>
+            탑승권 <span>boarding pass</span>
           </button>
         </li>
       </ul>
