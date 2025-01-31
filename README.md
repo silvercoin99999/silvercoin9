@@ -1,8 +1,29 @@
-# React + Vite
+# 실버코인호
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### \* LINK : [https://silvercoin9.web.app/](https://silvercoin9.web.app/)
 
-Currently, two official plugins are available:
+제 인생을 "배"에 비유해서 만든 반응형 포트폴리오 사이트입니다.<br>
+이 배의 선장은 저 이며, 제가 그동안 해온 일을 항해에 비유했습니다.<br>
+그리고 함께 항해할 동료를 찾고 있다는 내용을 표현하기 위해 만들었습니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### \* 사이트 기능과 구현 과정
+
+#### 1. 메뉴이동
+
+react-router-dom을 이용한 메뉴 이동 (메인, 로그인, 회원가입 페이지 접근 가능)
+<br><br>
+
+#### 2. 퀵메뉴 구현
+
+현재 활성화된 메뉴가 클릭으로 활성화된 건지, 스크롤로 활성화된 건지 구분하지 않고 구현했더니 click 이벤트와 scroll 이벤트의 충돌이 있었지만, '현재활성화 된 메뉴'와 '메뉴를 클릭했는지' 상태를 리덕스로 받아서 해결했습니다.
+<br><br>
+
+#### 3. 회원가입과 로그인이 가능합니다.
+
+firebase에서 제공하는 인증 기능을 활용해서 구현.<br>
+기본 기능 외에, 닉네임과 프로필 이미지 정보를 추가로 받아서 DB에 저장합니다.
+<br><br>
+
+#### 4. 프로젝트 업로드 기능
+
+프로젝트는 최초 한 번이 아닌 수시로 추가하고 싶은 기능이라고 생각해 프로젝트 이미지와 타이틀 값을 storage와 DB로 받아서 보여줍니다.
