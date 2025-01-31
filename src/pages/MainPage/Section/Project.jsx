@@ -30,9 +30,11 @@ function Project() {
   const [imageFileName, setImageFileName] = useState(
     "이미지파일 (png, jpg, gif)"
   );
+  const projectsRef = dbRef(db, "projects");
   const [projects, setProjects] = useState([]);
   const [project, setProject] = useState({});
   const [currentPage, setCurrentPage] = useState(0);
+  const [projectsLoading, setProjectsLoading] = useState(true);
 
   const {
     register,
@@ -68,9 +70,6 @@ function Project() {
     reset();
     setImageFileName("이미지파일 (png, jpg, gif)");
   };
-
-  // 프로젝트 공통
-  const projectsRef = dbRef(db, "projects");
 
   // 프로젝트 Create
   const handleImageFileNameChange = (e) => {
@@ -151,7 +150,20 @@ function Project() {
       const newProjectsArray = [...projectsArray];
 
       setProjects(newProjectsArray.reverse());
+      setProjectsLoading(false);
     });
+  };
+
+  const renderProjectsSkeleton = (loading) => {
+    return (
+      loading && (
+        <ul className="projectsSkeleton">
+          {[...Array(6)].map((_, i) => (
+            <li key={i}></li>
+          ))}
+        </ul>
+      )
+    );
   };
 
   const renderProjects = (projects) =>
@@ -174,7 +186,9 @@ function Project() {
           </li>
         ))
     ) : (
-      <div style={{ fontSize: "13px", color: "#fff" }}>빈 페이지</div>
+      <div style={{ fontSize: "13px", color: "#fff" }}>
+        등록된 프로젝트가 없습니다.
+      </div>
     );
 
   const handleOpenProjectModalRead = (project, i) => {
@@ -323,6 +337,7 @@ function Project() {
           </div>
         )}
       </div>
+      {renderProjectsSkeleton(projectsLoading)}
       <ul className="projects">{renderProjects(projects)}</ul>
       <ReactPaginate
         previousLabel={<FiChevronLeft />}

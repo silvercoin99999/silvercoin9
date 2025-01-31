@@ -27,10 +27,12 @@ function Profile() {
           <br />
           EUNHWA
         </p>
-        <img
-          src="https://firebasestorage.googleapis.com/v0/b/silvercoin9.firebasestorage.app/o/profile.png?alt=media&token=c694efa1-5743-46eb-a422-29b14eb01b04"
-          alt="프로필사진"
-        />
+        <div className="picture">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/silvercoin9.firebasestorage.app/o/profile.png?alt=media&token=c694efa1-5743-46eb-a422-29b14eb01b04"
+            alt="프로필사진"
+          />
+        </div>
         <ul>
           <li>
             <IoMdPerson /> 최 은 화 <span>(실버코인)</span>

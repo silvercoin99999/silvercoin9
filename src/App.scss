@@ -763,11 +763,18 @@ footer {
       }
     }
 
-    img {
+    .picture {
+      overflow: hidden;
       width: 100%;
       max-width: 300px;
+      min-height: 278px;
       margin-top: 10px;
       border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.3);
+
+      img {
+        width: 100%;
+      }
     }
 
     ul {
@@ -946,19 +953,6 @@ footer {
           width: 100%;
           height: 250px;
           background-color: rgba(255, 255, 255, 0.3);
-
-          &::before {
-            content: "Loading...";
-            display: flex;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: -1;
-            align-items: center;
-            justify-content: center;
-          }
 
           .img {
             width: 100%;
@@ -1261,5 +1255,21 @@ footer {
         }
       }
     }
+  }
+}
+
+.projectsSkeleton {
+  display: grid;
+  width: 100%;
+
+  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.3);
   }
 }
