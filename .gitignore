@@ -24,6 +24,11 @@ dist-ssr
 *.sw?
 
 # 추가
+.firebase
+.firebaserc
 firebase.js
 database.rules.json
 storage.rules
+eslint.config.js
+package-lock.json
+vite.config.js
