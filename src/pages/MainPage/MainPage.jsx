@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
-import Profile from "./Section/Profile";
-import Project from "./Section/Project";
-import BoardingPass from "./Section/boardingPass";
+import Profile from "./ProfileSection/Profile";
+import Project from "./ProjectSection/Project";
+import BoardingPass from "./BoardingPassSection/BoardingPass";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveQuickMenu } from "../../store/quickMenuSlice";
 
