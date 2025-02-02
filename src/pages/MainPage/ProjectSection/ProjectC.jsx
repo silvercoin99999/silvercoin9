@@ -56,6 +56,11 @@ function ProjectC() {
   };
 
   const onSubmit = async (data) => {
+    if (currentUser.uid == undefined) {
+      alert("로그인 유저만 등록가능합니다.");
+      return;
+    }
+
     setLoading(true);
 
     const file = data.projectImg[0];
